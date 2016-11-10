@@ -1,3 +1,19 @@
 #test{
 	font-family: Helvetica;
 }
+
+#octopus {
+	margin: 7cm 15cm;
+	position: absolute;
+}
+
+#hat {
+	margin: 5cm 14.5cm 5cm; 
+	position: fixed ;
+}
+
+#glasses {
+	margin: 9.7cm 16.2cm 9.5cm;
+	position: fixed;
+	z-index: +1;
+}
