@@ -1,0 +1,29 @@
+.column-1 {
+  float: left;
+  width: 50%;
+  background-color: grey;
+  font-family: cursive;
+  }
+
+.column-2 {
+  float: right;
+  width: 50%;
+  font-family: veranda;
+  background-image: url("http://www.pngmart.com/files/3/Elements-PNG-Photo.png");
+  background-size: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+body{
+  margin:0px;
+  background-color: #FFF;
+  font-family: helvetica;
+}
+footer{
+  width:100%;
+  clear:both;
+  text-align:center;
+}
+header{
+  text-align: center;
+}
