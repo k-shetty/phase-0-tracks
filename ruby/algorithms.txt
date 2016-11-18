@@ -1,0 +1,22 @@
+#Elevator 
+
+*First, Robot needs to know what floor to go to
+*Robot would then check each button, starting with 1
+*Robot will stop once it reaches the correct number
+*Robot will then press the button with the correct number on it
+
+#Real-life algorithm
+
+*One example of a real-life algorithm would be baking/cooking something following a recipe. You start with all the components separately and combine them together in a specific manner to produce the final product. For this example, the recipe is for chocolate chip cookies.
+
+-Preheat the oven to 375 degrees F
+-In a bowl combine eggs, sugar, butter and vanilla extract
+-In a second bowl mix flour, baking soda, and salt.
+-Add the contents to the second bowl to the first bowl while stirring
+-Then add chocolate chips into the final mixture
+-Scoop dough onto trays
+-Place trays into oven
+-Bake in oven for 20 minutes. 
+-Remove trays from oven
+-Cool for a few minutes
+-Eat cookies
