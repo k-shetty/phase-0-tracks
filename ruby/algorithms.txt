@@ -1,7 +1,7 @@
 #Elevator 
 
 *First, Robot needs to know what floor to go to
-*Robot would then check each button, starting with 1
+*Robot would then check each button, starting with 1 (or lower levels if the elevator has them)
 *Robot will stop once it reaches the correct number
 *Robot will then press the button with the correct number on it
 
