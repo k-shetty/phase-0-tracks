@@ -8,7 +8,7 @@ TOTALAPPLICANTS = gets.chomp.to_i
 #Conditional Logic
 index = 0
 
-while index <= TOTALAPPLICANTS 
+while index < TOTALAPPLICANTS 
 
 	puts "What is your name?"
 	e_name = gets.chomp.downcase
@@ -25,21 +25,39 @@ while index <= TOTALAPPLICANTS
 	puts "Would you like to enroll in the company's health insurance?"
 	e_insurance = gets.chomp
 
-		if (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") && (e_insurance == "yes") && (e_name == "drake cula") || (e_name == "tu fang"))
-			puts "Definitely a Vampire."
-		elsif (e_age != (2016 - e_birthyear)) && (e_bread == "no") && (e_insurance == "no")
-			puts "Almost certainly a vampire."
-		elsif (e_age != (2016 - e_birthyear)) && ((e_bread == "no") || (e_insurance == "no"))
-			puts "Probably a vampire."
-		elsif (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") || (e_insurance == "yes"))
-			puts "Probably not a vampire."
-		else
-			puts "Results inconclusive."
+	puts "What are you allergies. Type done when finished entering allergies"
+	e_allergy = gets.chomp.downcase
+
+		until ((e_allergy == "sunshine") || (e_allergy == "done"))
+			e_allergy = gets.chomp.downcase
 		end
+
+
+			if (e_allergy == "sunshine")
+				puts "Probably a vampire"
+			elsif (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") && (e_insurance == "yes") && (e_name == "drake cula") || (e_name == "tu fang"))
+				puts "Definitely a Vampire."
+			elsif (e_age != (2016 - e_birthyear)) && (e_bread == "no") && (e_insurance == "no")
+				puts "Almost certainly a vampire."
+			elsif (e_age != (2016 - e_birthyear)) && ((e_bread == "no") || (e_insurance == "no"))
+				puts "Probably a vampire."
+			elsif (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") || (e_insurance == "yes"))
+				puts "Probably not a vampire."
+			#elsif (e_allergy == "sunshine") 
+			#	puts "Probably not a vampire."
+			else
+				puts "Results inconclusive."
+			end
 index += 1
 end
 
 		
+=begin (release 4)
+add an until loop within total applicants loop asking for allergie
+
+end
+
+
 =begin (Repeat process for number of applicants)
 
 while loop
