@@ -1,40 +1,59 @@
 #Coding program to gather informmation from user
+puts "what is the total number of applicants today"
+TOTALAPPLICANTS = gets.chomp.to_i
 
-puts "What is your name?"
-e_name = gets.chomp.downcase
 
-puts "How old are you?"
-e_age = gets.chomp.to_i
 
-puts "What year were you born"
-e_birthyear = gets.chomp.to_i
 
-puts "Would you like us to order you some complimentary garlic bread from our cafeteria?"
-e_bread = gets.chomp
+#Conditional Logic
+index = 0
 
-puts "Would you like to enroll in the company's health insurance?"
-e_insurance = gets.chomp
+while index <= TOTALAPPLICANTS 
 
-if (e_age == (2016-e_birthyear)) && ((e_bread == "yes") && (e_insurance == "yes") && (e_name == "drake cula") || (e_name == "tu fang"))
-	puts "Definitely a Vampire."
-elsif (e_age != (2016- e_birthyear)) && (e_bread == "no") && (e_insurance == "no")
-puts "Almost certainly a vampire."
-elsif (e_age != (2016- e_birthyear)) && ((e_bread == "no") || (e_insurance == "no"))
-puts "Probably a vampire."
-elsif (e_age == (2016-e_birthyear)) && ((e_bread == "yes") || (e_insurance == "yes"))
-puts "Probably not a vampire."
-else
-	puts "Results inconclusive."
+	puts "What is your name?"
+	e_name = gets.chomp.downcase
+
+	puts "How old are you?"
+	e_age = gets.chomp.to_i
+
+	puts "What year were you born"
+	e_birthyear = gets.chomp.to_i
+
+	puts "Would you like us to order you some complimentary garlic bread from our cafeteria?"
+	e_bread = gets.chomp
+
+	puts "Would you like to enroll in the company's health insurance?"
+	e_insurance = gets.chomp
+
+		if (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") && (e_insurance == "yes") && (e_name == "drake cula") || (e_name == "tu fang"))
+			puts "Definitely a Vampire."
+		elsif (e_age != (2016 - e_birthyear)) && (e_bread == "no") && (e_insurance == "no")
+			puts "Almost certainly a vampire."
+		elsif (e_age != (2016 - e_birthyear)) && ((e_bread == "no") || (e_insurance == "no"))
+			puts "Probably a vampire."
+		elsif (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") || (e_insurance == "yes"))
+			puts "Probably not a vampire."
+		else
+			puts "Results inconclusive."
+		end
+index += 1
 end
 
 		
+=begin (Repeat process for number of applicants)
+
+while loop
+set index = 0
+while index < number of applicants 
+
+run logic, print result for employee, move to next employee
 
 
 
 
 
 
-=begin
+=begin (conditonal logic)
 	
 If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 
