@@ -30,18 +30,20 @@ while index < TOTALAPPLICANTS
 
 
 			if (e_allergy == "sunshine")
-				puts "Probably a vampire"
+				result = "Probably a vampire"
 			elsif ((e_name == "drake cula") || (e_name == "tu fang"))
-				puts "Definitely a Vampire."
+				result = "Definitely a Vampire."
 			elsif (e_age != (2016 - e_birthyear)) && (e_bread == "no") && (e_insurance == "no")
-				puts "Almost certainly a vampire."
+				result = "Almost certainly a vampire."
 			elsif (e_age != (2016 - e_birthyear)) && ((e_bread == "no") || (e_insurance == "no"))
-				puts "Probably a vampire."
+				result = "Probably a vampire."
 			elsif (e_age == (2016 - e_birthyear)) && ((e_bread == "yes") || (e_insurance == "yes"))
-				puts "Probably not a vampire."
+				result = "Probably not a vampire."
 			else
-				puts "Results inconclusive."
+				result = "Results inconclusive."
 			end
+p result
+
 index += 1
 end
 
