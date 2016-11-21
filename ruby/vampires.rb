@@ -1,9 +1,7 @@
-#Coding program to gather informmation from user
 puts "what is the total number of applicants today"
 TOTALAPPLICANTS = gets.chomp.to_i
 
 
-#Conditional Logic
 index = 0
 
 while index < TOTALAPPLICANTS 
@@ -52,8 +50,6 @@ p "Actually, never mind! What do these questions have to do with anything? Let's
 		
 #  (release 4)
 # add an until loop within total applicants loop asking for allergies
-
-# (e_age = (2016 - e_birthyear)) && ((e_bread == "yes") && (e_insurance == "yes") && 
 
 # end
 
