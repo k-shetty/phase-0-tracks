@@ -7,10 +7,11 @@
 #	-vowels move to next vowel
 #Join final result
 #Save results
-name = "Karan Shetty".downcase.split(' ')
+# "What is your name?"
+# name = gets.chomp.downcase.split(' ')
 
-$first_name = name.first.split('')
-$last_name = name.last.split('')
+# $first_name = name.first.split('')
+# $last_name = name.last.split('')
 
 
 $vowels = ("aeiou".split(''))
@@ -23,45 +24,57 @@ $consonants = ("bcdfghjklmnpqrstvwxyz".split(''))
 
 def next_character(character)
 	if $vowels.include?(character)
-		p $vowels[($vowels.index(character) + 1)]
+		$vowels[($vowels.index(character) + 1)]
 	else
-		p $consonants[($consonants.index(character) + 1)]
+		$consonants[($consonants.index(character) + 1)]
 	end
 end
 
-def alias_maker(name)
-	new_first_name = []
-	new_last_name = []
-	
+
+
+def alias_first(name1)
+	$new_first_name = []
 	$first_name.map do |character|
 		character = next_character(character)
-		new_first_name << character
+		$new_first_name << character
 	end	
-
-	$last_name.map do |character|
-		character = next_character(character)
-		new_last_name << character
-	end
-	p new_last_name
-	p new_first_name
+	$new_first_name.join.capitalize
 end
 
-p alias_maker ("Karan Shetty")
+def alias_last(name2)
+	$new_last_name = []
+		$last_name.map do |character|
+		character = next_character(character)
+		$new_last_name << character
+	end
+	 $new_last_name.join.capitalize
+end
 
-# p new_first_name
-# p new_last_name
-# def alias_creation(name)
-# 	$first_name.map! {|l|
-# 		p l
-# 		l = next_character(l)
-# 	}
-# 	# $last_name.map! {|l|
-# 	# 	l = next_character(l)
-# 	# }
+def alias_maker(input)
+	$input.downcase.split(' ')
+		 $first_name = $input.(0).split('')
+		 $last_name = $input.(1).split('')
+	puts "Your alias is #{alias_last(last_name)} #{alias_first(first_name)}"
+end
 
-	
-# end
 
-# p alias_creation ("Karan Shetty")
+# p alias_first($first_name)
+# p alias_last($last_name)
 
-# puts next_character("b")
+#interface
+
+loop do
+	puts "What is your name? (type 'quit' when done entering names)"
+	$input = gets.chomp
+		 if $input == "quit"
+			break
+		else 
+			$input.downcase.split(' ')
+			puts "Your alias is #{alias_maker($input)}."
+		end
+end
+
+# name = gets.chomp.downcase.split(' ')
+# 		 $first_name = name.first.split('')
+# 		 $last_name = name.last.split('')
+# 		 alias_storage = {}
