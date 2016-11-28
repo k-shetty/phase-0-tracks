@@ -7,6 +7,7 @@
 #	-vowels move to next vowel
 #Join final result
 #Save results
+
 # "What is your name?"
 # name = gets.chomp.downcase.split(' ')
 
@@ -33,47 +34,53 @@ end
 
 
 def alias_first(name1)
-	$new_first_name = []
-	$first_name.map do |character|
+	new_first_name = []
+	first_name = $input[0].split('')
+	first_name.map do |character|
 		character = next_character(character)
-		$new_first_name << character
+		new_first_name << character
 	end	
-	$new_first_name.join.capitalize
+	new_first_name.join.capitalize
 end
 
 def alias_last(name2)
-	$new_last_name = []
-		$last_name.map do |character|
+	new_last_name = []
+		last_name = $input[1].split('')
+		last_name.map do |character|
 		character = next_character(character)
-		$new_last_name << character
+		new_last_name << character
 	end
-	 $new_last_name.join.capitalize
+	 new_last_name.join.capitalize
 end
 
-def alias_maker(input)
-	$input.downcase.split(' ')
-		 $first_name = $input.(0).split('')
-		 $last_name = $input.(1).split('')
-	puts "Your alias is #{alias_last(last_name)} #{alias_first(first_name)}"
-end
+# def alias_maker(input)
+# 	$input.downcase.split(' ')
+# 		 $first_name = $input.(0).split('')
+# 		 $last_name = $input.(1).split('')
+# 	puts "Your alias is #{alias_last(last_name)} #{alias_first(first_name)}"
+# end
 
 
 # p alias_first($first_name)
 # p alias_last($last_name)
 
-#interface
-
+# interface
+alias_storage = {}
 loop do
 	puts "What is your name? (type 'quit' when done entering names)"
-	$input = gets.chomp
-		 if $input == "quit"
+	$input = gets.chomp.split(' ')
+
+		 if $input[0] == "quit"
 			break
 		else 
-			$input.downcase.split(' ')
-			puts "Your alias is #{alias_maker($input)}."
+			puts "Your alias is #{alias_last($input[1])} #{alias_first($input[0])}."
+			alias_storage[$input.join(' ')] = ("#{alias_last($input[1])}  #{alias_first($input[0])}")
 		end
 end
 
+alias_storage.each do |key, value|
+	puts "#{value} is the alias for #{key}."
+end
 # name = gets.chomp.downcase.split(' ')
 # 		 $first_name = name.first.split('')
 # 		 $last_name = name.last.split('')
