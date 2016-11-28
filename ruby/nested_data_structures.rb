@@ -1,4 +1,5 @@
 classroom = {
+    
     desk1: {
         student_name: 'Chet Manly',
         subject_textbooks: {
@@ -42,18 +43,29 @@ classroom = {
 
     desk4: {
         student_name: 'Ray Gillete',
+       
         subject_textbooks: {
             Calligraphy: 2,
             History: 4,
             English: 3
-
         },
         writing_instruments: [
             "G2 Pilot Pens", 
             "Mechanical Pencils",
             "Fountain Pens"
         ]
-    },
     }
+    
 }
 
+#Number of biology textbooks in Rip Riley's desk?
+p classroom[:desk2][:subject_textbooks][:Biology]
+
+#What is Ray's favorite writing instrument?
+p classroom[:desk4][:writing_instruments][2]
+
+#Who sits at desk #1?
+p classroom[:desk1][:student_name]
+
+#How many subjects is Pam Poovey currently studying?
+p classroom[:desk3][:subject_textbooks].length
