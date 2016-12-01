@@ -40,25 +40,25 @@ def create_list()
 end
 
 def add_item ()
-
+a = create_list
 	loop do	
 
-		a = create_list
+		# a = create_list
 		puts "What item would you like to add to the list?"
-		input_key = gets.chomp
+		input_key = gets.chomp.downcase
+		break if input_key == "done" 
 		puts "How many of this item do you want?"
 		input_value = gets.chomp.to_i
 
-		a[input_key] = input_value
+			# break if input_key == "done" 
 
-		break if input_key == "done"
-
-		p a
+				a[input_key] = input_value
+		
 	end
-
+	p a
 end
 
-add_item 
+
 
 
 
