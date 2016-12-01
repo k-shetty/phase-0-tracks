@@ -9,14 +9,19 @@ CHARACTERISTICS ----------------
 Friendly: yes
 Eye count: 2
 Ear Count: 2
-Name: varies
-Color: varies
+Name: varies (Depends on the owner)
+Color: varies (Ranges from white to black)
 # of legs: 4
+Size: varies (Large, Medium or Small)
 
 BEHAVIOR -----------------------
-Jump
+Jumping
 Running
 Sniffing
 Licking
+Playful
+
+
 
 =end
+
