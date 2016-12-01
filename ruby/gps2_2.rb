@@ -43,65 +43,43 @@ def add_item ()
 a = create_list
 	loop do	
 
-		# a = create_list
 		puts "What item would you like to add to the list?"
-		input_key = gets.chomp.downcase
-		break if input_key == "done" 
+		input_key = gets.chomp.capitalize
+		break if input_key == "Done" 
 		puts "How many of this item do you want?"
 		input_value = gets.chomp.to_i
 
-			# break if input_key == "done" 
-
-				a[input_key] = input_value
+		a[input_key] = input_value
 		
 	end
 	p a
 end
 
-# add_item
-
 def remove_item (list)
-	# test_hash = {
-	# 	"milk" => 2,
-	# 	"cheese" => 2,
-	# 	"detergent" => 1
-	# }
-# add_item
-		loop do
-			puts "Would you like to remove any items from your list?"
-			input = gets.chomp.downcase
+	loop do
+		puts "Would you like to remove any items from your list?"
+		input = gets.chomp.capitalize
 
-			if input == "done"
-				break
-			elsif 
-				list.include?(input)
-				list.delete(input)
-			else 
-				puts "Incorrect input"
-			end
-
-		
+		if input == "Done"
+			break
+		elsif 
+			list.include?(input)
+			list.delete(input)
+		else 
+			puts "Incorrect input"
+		end
 	end
-p list
+	p list
 end
 
 
-
-# remove_item
-
 def quantity_update(list)
-	# test_hash = {
-	# 	"milk" => 2,
-	# 	"cheese" => 2,
-	# 	"detergent" => 1
-	# }
 	loop do
-			puts "Would you like to update the quantity of any items from your list?"
-			update_item = gets.chomp.downcase
-			break if update_item == "done"
-			puts "How many of this item do you want?"
-			new_quantity = gets.chomp.to_i
-
+		puts "Would you like to update the quantity of any items from your list?"
+		update_item = gets.chomp.capitalize
+		break if update_item == "Done"
+		puts "How many of this item do you want?"
+		new_quantity = gets.chomp.to_i
 
 			if 
 				list.include?(update_item)
@@ -113,19 +91,15 @@ def quantity_update(list)
 p list
 end
 
-# quantity_update
-
 def print_list(list)
 
+	puts ""
+	puts "GROCERY LIST".rjust(17)
+	puts "======================="
+	puts ""
 	
-
-	puts "GROCERY LIST"
-	puts "=============================="
-	puts ""
-	puts ""
-
-	list.map do |key,value|
-		puts "#{key} #{value}"
+	list.each do |key,value|
+		printf "%-20s %s\n\n",key, value
 	end
 end
 
