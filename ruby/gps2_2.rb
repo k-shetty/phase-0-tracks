@@ -58,7 +58,35 @@ a = create_list
 	p a
 end
 
+# add_item
 
+def remove_item ()
+	test_hash = {
+		"milk" => 2,
+		"cheese" => 2,
+		"detergent" => 1
+	}
+		loop do
+			puts "Would you like to remove any items from your list?"
+			input = gets.chomp.downcase
+
+			if input == "done"
+				break
+			elsif 
+				test_hash.include?(input)
+				test_hash.delete(input)
+			else 
+				puts "Incorrect input"
+			end
+
+		
+	end
+p test_hash
+end
+
+
+
+remove_item
 
 
 
