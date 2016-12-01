@@ -89,7 +89,7 @@ end
 
 # remove_item
 
-def quantity_update()
+def quantity_update(list)
 	# test_hash = {
 	# 	"milk" => 2,
 	# 	"cheese" => 2,
@@ -104,16 +104,33 @@ def quantity_update()
 
 
 			if 
-				test_hash.include?(update_item)
-				test_hash[update_item] = new_quantity
+				list.include?(update_item)
+				list[update_item] = new_quantity
 			else 
 				puts "Incorrect input"
 			end
 	end
-p test_hash
+p list
 end
 
-quantity_update
+# quantity_update
+
+def print_list(list)
+
+	
+
+	puts "GROCERY LIST"
+	puts "=============================="
+	puts ""
+	puts ""
+
+	list.map do |key,value|
+		puts "#{key} #{value}"
+	end
+end
+
+print_list(quantity_update(remove_item(add_item)))
+
 
 
 
