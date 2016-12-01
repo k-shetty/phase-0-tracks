@@ -60,12 +60,13 @@ end
 
 # add_item
 
-def remove_item ()
-	test_hash = {
-		"milk" => 2,
-		"cheese" => 2,
-		"detergent" => 1
-	}
+def remove_item (list)
+	# test_hash = {
+	# 	"milk" => 2,
+	# 	"cheese" => 2,
+	# 	"detergent" => 1
+	# }
+# add_item
 		loop do
 			puts "Would you like to remove any items from your list?"
 			input = gets.chomp.downcase
@@ -73,20 +74,48 @@ def remove_item ()
 			if input == "done"
 				break
 			elsif 
-				test_hash.include?(input)
-				test_hash.delete(input)
+				list.include?(input)
+				list.delete(input)
 			else 
 				puts "Incorrect input"
 			end
 
 		
 	end
-p test_hash
+p list
 end
 
 
 
-remove_item
+# remove_item
+
+def quantity_update()
+	# test_hash = {
+	# 	"milk" => 2,
+	# 	"cheese" => 2,
+	# 	"detergent" => 1
+	# }
+	loop do
+			puts "Would you like to update the quantity of any items from your list?"
+			update_item = gets.chomp.downcase
+			break if update_item == "done"
+			puts "How many of this item do you want?"
+			new_quantity = gets.chomp.to_i
+
+
+			if 
+				test_hash.include?(update_item)
+				test_hash[update_item] = new_quantity
+			else 
+				puts "Incorrect input"
+			end
+	end
+p test_hash
+end
+
+quantity_update
+
+
 
 
 
