@@ -43,7 +43,7 @@ def add_item ()
 a = create_list
 	loop do	
 
-		puts "What item would you like to add to the list?"
+		puts "What item would you like to add to the list? Type 'done' when finished."
 		input_key = gets.chomp.capitalize
 		break if input_key == "Done" 
 		puts "How many of this item do you want?"
@@ -57,7 +57,7 @@ end
 
 def remove_item (list)
 	loop do
-		puts "Would you like to remove any items from your list?"
+		puts "Would you like to remove any items from your list? Type 'done' when finished"
 		input = gets.chomp.capitalize
 
 		if input == "Done"
@@ -75,7 +75,7 @@ end
 
 def quantity_update(list)
 	loop do
-		puts "Would you like to update the quantity of any items from your list?"
+		puts "Would you like to update the quantity of any items from your list? Type 'done' when finished"
 		update_item = gets.chomp.capitalize
 		break if update_item == "Done"
 		puts "How many of this item do you want?"
