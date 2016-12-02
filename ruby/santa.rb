@@ -6,10 +6,8 @@ class Santa
 	def initialize(gender, ethnicity)
 		#puts "Initializing Santa instance..."
 		@gender = gender
-		@age = 0
+		@age = rand(141)
 		@ethnicity = ethnicity
-		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		
 	end
 
 	def speak
@@ -24,27 +22,21 @@ class Santa
 		@age += 1
 	end
 
-	def get_mad_at(reinder_name)
-		@reindeer_ranking.delete(reinder_name)
-		@reindeer_ranking << reinder_name
+	def get_mad_at(reindeer_name)
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking << reindeer_name
 	end
-#Getter Methods
-#commented out getter methods due to attr_reader
-	# def age
-	# 	@age
-	# end 
 
-	# def ethnicity
-	# 	@ethnicity
-	# end
+	def about
+		@age
+	end
+
+#Getter Methods
+#removed getter methods due to attr_reader
 	
 #Setter Method
-#commented out setter method due to attr_accessor
-	# def gender=(new_gender)
-	# 	@gender = new_gender
-	# end
-
-
+#removed setter method due to attr_accessor
 end
 
 #Driver code to test
@@ -53,49 +45,37 @@ end
 # santa.eat_milk_and_cookies("chocolate chip")
 
 # santas = []
-# santas << Santa.new("agender", "black")
-# santas << Santa.new("female", "Latino")
-# santas << Santa.new("bigender", "white")
-# santas << Santa.new("male", "Japanese")
-# santas << Santa.new("female", "prefer not to say")
-# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-# santas << Santa.new("N/A", "N/A")
-
-# santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 # example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 # example_genders.length.times do |i|
 #   santas << Santa.new(example_genders[i], example_ethnicities[i])
 # end
 
-sample_santa = Santa.new("male", "asian")
-sample_santa.gender = "something"
+# sample_santa = Santa.new("male", "asian")
+# sample_santa.gender = "something"
 
-p sample_santa
-p sample_santa.age
-p sample_santa.celebrate_birthday
-p sample_santa.ethnicity
-p sample_santa.age
-
-
-# p santas
+# p sample_santa
+# p sample_santa.age
+# p sample_santa.celebrate_birthday
+# p sample_santa.ethnicity
+# p sample_santa.age
+# p sample_santa.get_mad_at("Prancer")
+# p sample_santa
 
 def santa_party(number_of_santas)
-	santa_party_list = []
+	guest_list =[]
 	example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 	example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+	
+	number_of_santas.times do
+		gender = example_genders.sample
+		ethnicity = example_ethnicities.sample
+		guest_list << Santa.new(gender, ethnicity)
+	end 
 
-	santas = Santa.new(example_genders.select, example_ethnicities.select)
-	santas.age(rand(141))
-	santa_party_list << santas
-
-	santa_party_list.each do |x|
-		
+	guest_list.each do |guest|
+		puts "This santa is #{guest.age} years old, identifies as #{guest.gender} and comes from a #{guest.ethnicity} background."
 	end
-
 end
 
-
-
-
-
+santa_party(20)
