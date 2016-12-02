@@ -80,6 +80,21 @@ p sample_santa.age
 
 # p santas
 
+def santa_party(number_of_santas)
+	santa_party_list = []
+	example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+	example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+	santas = Santa.new(example_genders.select, example_ethnicities.select)
+	santas.age(rand(141))
+	santa_party_list << santas
+
+	santa_party_list.each do |x|
+		
+	end
+
+end
+
 
 
 
