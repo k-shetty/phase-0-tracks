@@ -105,6 +105,29 @@ end
 
 print_list(quantity_update(remove_item(add_item)))
 
+=begin
+REFLECT
+
+* After working on this challenge, the importance of having thought out pseduocode really plays a big role in how effectively you can
+work thorugh the challenge. This is even moreso with paired sessions, since it forces both people to talk through how they want to work
+through the problem. It avoids confusion and allows you to bounce ideas back and forth with your partner.
+
+* Using arrays for this challenge would have been a little difficult to read if my partner and I had gone that route. When we saw the requirement
+of the program was to have and item and quantity, hashes made the most sense, since we were working with two values associated with each other 
+rather than just listing the items out in an array. 
+
+* A method returns the last evaluated expression in that method unless a value is explicitly returned ealrier in the method.
+
+* Methods can take a a lot as arguments, depending on the funtion of the method. It can ba a number, string, block of code, as long as the method 
+can be used on that argument.
+
+* A method can take input from other methods as long as the output of one method is an acceptable input for another method. 
+
+*My understanding of passing information from one method to the next was strengthened in this challenge, moreso than last week. It's still an area
+in which I'm still trying to improve my understaanding of. 
+	
+end
+
 
 
 
