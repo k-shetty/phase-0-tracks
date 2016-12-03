@@ -14,8 +14,17 @@
 
 
 class GuessWordGame
-	def intialize()
-		
+	def intialize(word)
+		@secret_word = word
+		@guess_count = 0
+	end
+
+	def num_of_guesses(word)
+		@guess_count
+	end
+
+	def secret_word_convert(word)
+
 	end
 
 end
