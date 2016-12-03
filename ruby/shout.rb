@@ -5,7 +5,10 @@ module Shout
 	end
 
 	def self.yell_happily(words)
-		words + "!" + " :D"
+		words.upcase + "!" + " :D"
 	end
 end
+
+# p Shout.yell_angrily("This is just a test")
+# p Shout.yell_happily("I'm getting the hang of this")
 
