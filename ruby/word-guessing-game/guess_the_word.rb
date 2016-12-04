@@ -14,43 +14,78 @@
 
 
 class GuessWordGame
-	attr_reader :secret_word, :number_of_guesses, :user_word
+	attr_reader :secret_word, :final_user_word, :temp, :position
+	attr_accessor :user_word, :number_of_guesses, :guess_count
 	
 	def initialize(word)
 		@secret_word = word
+		@guess_count = 0
 	end
 
 	def total_guesses()
 		if @secret_word.length > 1 && @secret_word.length <5
-			@number_of_guesses = 6
+			number_of_guesses = 6
 		elsif @secret_word.length > 4 && @secret_word.length <10
-			@number_of_guesses = 7
+			number_of_guesses = 7
 		elsif @secret_word.length > 9 && @secret_word.length <16
-			@number_of_guesses = 8
+			number_of_guesses = 8
 		elsif @secret_word.length > 15 && @secret_word.length <20		
-			@number_of_guesses = 9
+			number_of_guesses = 9
 		else
-			@number_of_guesses = 10
+			number_of_guesses = 10
 		end
 	end
 
 	def convert_secret_word()
-		temp = @secret_word.split('')
-		@user_word = temp.map do |letter|
+		@temp = @secret_word.split('')
+		@user_word = @temp.map do |letter|
 			"_"
 		end
+		# @final_user_word = 
 		@user_word.join(' ')
 	end
 
-	def check_secret_word()
+	def check_secret_word(character)
+		@position = []
+		index = 0
+		while index < @secret_word.length
+		    if @temp[index] == character
+		       @position.push(index) 
+		    end
+		index += 1
+		end
 	end
+
+	def compare_to_user(character)
+		index = 0
+		while index < @position.length
+			@user_word[position[index]] = character
+			index += 1
+		end
+	end
+
+	def output_to_user
+		@final_user_word = @user_word.join(' ')
+	end
+
 
 end
 
 # game = GuessWordGame.new("surface")
-# # #  p game.secret_word
-# # p game.total_guesses
+# # # p game.secret_word
+# # # p game.total_guesses
 
-# # p game.number_of_guesses
-# p game.secret_word_convert
-# p game.user_word.
+# # # p game.number_of_guesses
+# p game.convert_secret_word
+
+# p game.temp
+# p game.check_secret_word
+
+#UI
+
+
+
+
+
+
+
