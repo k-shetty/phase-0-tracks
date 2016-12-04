@@ -14,8 +14,8 @@
 
 
 class GuessWordGame
-	attr_reader :secret_word, :final_user_word, :temp, :position
-	attr_accessor :user_word, :number_of_guesses, :guess_count
+	attr_reader :secret_word, :number_of_guesses, :final_user_word, :temp, :position
+	attr_accessor :user_word, :guess_count
 	
 	def initialize(word)
 		@secret_word = word
@@ -24,15 +24,15 @@ class GuessWordGame
 
 	def total_guesses()
 		if @secret_word.length > 1 && @secret_word.length <5
-			number_of_guesses = 6
+			@number_of_guesses = 6
 		elsif @secret_word.length > 4 && @secret_word.length <10
-			number_of_guesses = 7
+			@number_of_guesses = 7
 		elsif @secret_word.length > 9 && @secret_word.length <16
-			number_of_guesses = 8
+			@number_of_guesses = 8
 		elsif @secret_word.length > 15 && @secret_word.length <20		
-			number_of_guesses = 9
+			@number_of_guesses = 9
 		else
-			number_of_guesses = 10
+			@number_of_guesses = 10
 		end
 	end
 
@@ -41,7 +41,6 @@ class GuessWordGame
 		@user_word = @temp.map do |letter|
 			"_"
 		end
-		# @final_user_word = 
 		@user_word.join(' ')
 	end
 
@@ -82,10 +81,48 @@ end
 # p game.check_secret_word
 
 #UI
+puts "Welcome to the word guessing game"
+puts "We will need a word to begin the game"
+word = gets.chomp
+
+puts "Starting the game"
+game = GuessWordGame.new(word)
+game.total_guesses
+game.convert_secret_word
+game.output_to_user
+p game.final_user_word
+
+puts "The player has #{game.total_guesses} tries to guess letters of the word. Enter in one letter at a time to start guessing."
 
 
+while game.guess_count < game.total_guesses
+	letter = gets.chomp
 
+	if game.user_word.include?(letter)
+			game.guess_count = game.guess_count
+		else
+			game.guess_count += 1
+	end
+	
+	game.check_secret_word(letter)
+	game.compare_to_user(letter)
+	game.output_to_user
+	p game.final_user_word
 
+		
+	puts "Player has #{game.total_guesses - game.guess_count} tries remaining."
 
+		if (game.total_guesses - game.guess_count) == 0
+			puts "You can enter the word if you know it"
+			user_word = gets.chomp
+				if user_word == word
+					puts "You are correct! YOU'RE A WINNER!"
+					break
+				else
+					puts "You lost! Better luck next time =/"
+					break
+				end
+end
+end
 
 
