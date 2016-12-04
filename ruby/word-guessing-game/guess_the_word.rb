@@ -14,17 +14,43 @@
 
 
 class GuessWordGame
-	def intialize(word)
+	attr_reader :secret_word, :number_of_guesses, :user_word
+	
+	def initialize(word)
 		@secret_word = word
-		@guess_count = 0
 	end
 
-	def num_of_guesses(word)
-		@guess_count
+	def total_guesses()
+		if @secret_word.length > 1 && @secret_word.length <5
+			@number_of_guesses = 6
+		elsif @secret_word.length > 4 && @secret_word.length <10
+			@number_of_guesses = 7
+		elsif @secret_word.length > 9 && @secret_word.length <16
+			@number_of_guesses = 8
+		elsif @secret_word.length > 15 && @secret_word.length <20		
+			@number_of_guesses = 9
+		else
+			@number_of_guesses = 10
+		end
 	end
 
-	def secret_word_convert(word)
+	def convert_secret_word()
+		temp = @secret_word.split('')
+		@user_word = temp.map do |letter|
+			"_"
+		end
+		@user_word.join(' ')
+	end
 
+	def check_secret_word()
 	end
 
 end
+
+# game = GuessWordGame.new("surface")
+# # #  p game.secret_word
+# # p game.total_guesses
+
+# # p game.number_of_guesses
+# p game.secret_word_convert
+# p game.user_word.
