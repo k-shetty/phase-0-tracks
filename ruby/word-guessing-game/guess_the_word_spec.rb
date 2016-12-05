@@ -19,7 +19,4 @@ describe GuessWordGame do
 		expect(game.convert_secret_word).to eq("_ _ _ _ _ _ _")
 	end
 
-
-
-	
 end

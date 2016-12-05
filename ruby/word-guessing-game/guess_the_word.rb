@@ -66,24 +66,12 @@ class GuessWordGame
 	def output_to_user
 		@final_user_word = @user_word.join(' ')
 	end
-
-
 end
-
-# game = GuessWordGame.new("surface")
-# # # p game.secret_word
-# # # p game.total_guesses
-
-# # # p game.number_of_guesses
-# p game.convert_secret_word
-
-# p game.temp
-# p game.check_secret_word
 
 #UI
 puts "Welcome to the word guessing game"
 puts "We will need a word to begin the game"
-word = gets.chomp
+word = gets.chomp.downcase
 
 puts "Starting the game"
 game = GuessWordGame.new(word)
@@ -96,7 +84,7 @@ puts "The player has #{game.total_guesses} tries to guess letters of the word. E
 
 
 while game.guess_count < game.total_guesses
-	letter = gets.chomp
+	letter = gets.chomp.downcase
 
 	if game.user_word.include?(letter)
 			game.guess_count = game.guess_count
@@ -122,7 +110,9 @@ while game.guess_count < game.total_guesses
 					puts "You lost! Better luck next time =/"
 					break
 				end
+		end
 end
-end
+
+
 
 
