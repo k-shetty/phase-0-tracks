@@ -27,6 +27,7 @@ class VirusPredictor
   private
 
   def predicted_deaths
+    # predicted deaths is solely based on population density
     number_of_deaths =
     if @population_density >= 200
       (@population * 0.4)
@@ -110,4 +111,3 @@ end
 
 # For me personally, this challenge helped me refine my ability to refactor. I also got more comfortable with using classes
 # and knowing how to call methods on new instances of a class. 
-
