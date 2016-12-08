@@ -5,14 +5,23 @@
 // new array should contain letters in reverse order
 // join new array and output to console. 
 
-function reverse (str) {
+function reverse(str) {
   var string = str;
   var stringArray = string.split('');
   var reverseArray = [];
   
-  for (var i = 0; i < string.length; i++) {
+  for (var i = 0; i < stringArray.length; i++) {
   	reverseArray.unshift(stringArray[i])
   }
   
-  console.log(reverseArray.join(''))
+  return (reverseArray.join(''))
 }
+
+// driver code
+
+var reverseString = reverse("Surface Pro 3");
+
+if (1 == 1) {
+	console.log(reverseString);
+}
+
