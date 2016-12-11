@@ -39,7 +39,45 @@ function matching_keys(object1, object2){
 }
 
 
+//Release 2
+//Write a function that takes an integer for length, and builds and returns an array of strings of the given length
+//The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters.
+//Input: integer
+//Output: array
+//Write one funtion that creates the random strings based on requirements given.
+//implement string creating method within function to solve the original challenge given.
 
+// function string_generator() {
+// 	var randstr = "";
+// 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+// 	var string_length = Math.floor((Math.random() * 10) + 1);
+	
+// 	for (var i = 0; i < string_length; i++) {
+// 		randstr += alphabet.charAt(Math.floor((Math.random() * 25) + 1))
+// 	}
+// 	return randstr
+// }
+
+function array_gen(int) {
+	gen_array = []
+	for (var i = 0; i < int; i++) {
+		var randstr = "";
+		var alphabet = "abcdefghijklmnopqrstuvwxyz";
+		var string_length = Math.floor((Math.random() * 10) + 1);
+	
+			for (var j = 0; j < string_length; j++) {
+			randstr += alphabet.charAt(Math.floor((Math.random() * 25) + 1))
+			}
+		gen_array.push(randstr)
+	};
+	return gen_array
+}
+
+
+
+
+
+	
 //Driver Code
 
 //Release 0
@@ -49,8 +87,14 @@ function matching_keys(object1, object2){
 // console.log(longest_item(test2))
 
 //Release 1
-var object_1 = {name: "Steven", age: 54};
-var object_2 = {name: "Tamir", age: 54};
-var object_3 = {name: "Terrance", age: 45};
-console.log(matching_keys(object_1,object_2))
-console.log(matching_keys(object_1,object_3))
+// var object_1 = {name: "Steven", age: 54};
+// var object_2 = {name: "Tamir", age: 54};
+// var object_3 = {name: "Terrance", age: 45};
+// console.log(matching_keys(object_1,object_2))
+// console.log(matching_keys(object_1,object_3))
+
+//Release 2
+
+console.log(array_gen(5))
+console.log(array_gen(3))
+console.log(array_gen(7))
