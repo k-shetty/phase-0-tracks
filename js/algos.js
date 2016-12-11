@@ -40,6 +40,7 @@ function matching_keys(object1, object2){
 
 
 //Release 2
+
 //Write a function that takes an integer for length, and builds and returns an array of strings of the given length
 //The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters.
 //Input: integer
@@ -72,10 +73,6 @@ function array_gen(int) {
 	};
 	return gen_array
 }
-
-
-
-
 
 	
 //Driver Code
