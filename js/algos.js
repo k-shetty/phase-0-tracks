@@ -12,7 +12,7 @@ function longest_item(array) {
 	var longest = "";
 
 	for (var i = 0; i < array.length; i++){
-		if (array[i].length > longest.length){
+		if (array[i].length > longest.length) {
 			longest = array[i]
 		}
 	}
@@ -20,10 +20,37 @@ function longest_item(array) {
 }
 
 
+//Release 1
+
+//write a function that takes two objects and checks to see if the objects share at least one key-value pair.
+
+//Input: 2 objects
+//Output: Boolean
+//Iterate over the keys in the first object and see if they equal any keys in the second object.
+//Return true if match,return false if no match
+
+function matching_keys(object1, object2){
+	for (var key in object1) {
+		if (object1[key] == object2[key]) {
+			return true
+		}	
+	}
+	return false;
+}
+
+
+
 //Driver Code
 
 //Release 0
-var test = ["long phrase","longest phrase","longer phrase"];
-var test2 = ["a", "abcdef", "abd", "adkjandjwadwj"];
-console.log(longest_item(test))
-console.log(longest_item(test2))
+// var test = ["long phrase","longest phrase","longer phrase"];
+// var test2 = ["a", "abcdef", "abd", "adkjandjwadwj"];
+// console.log(longest_item(test))
+// console.log(longest_item(test2))
+
+//Release 1
+var object_1 = {name: "Steven", age: 54};
+var object_2 = {name: "Tamir", age: 54};
+var object_3 = {name: "Terrance", age: 45};
+console.log(matching_keys(object_1,object_2))
+console.log(matching_keys(object_1,object_3))
