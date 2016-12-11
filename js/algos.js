@@ -8,3 +8,22 @@
 //Iterate through array, compare length of current index with length of the place holder variable.
 //Phrase with longest count gets assigned to place holder variable.
 
+function longest_item(array) {
+	var longest = "";
+
+	for (var i = 0; i < array.length; i++){
+		if (array[i].length > longest.length){
+			longest = array[i]
+		}
+	}
+	return longest	
+}
+
+
+//Driver Code
+
+//Release 0
+var test = ["long phrase","longest phrase","longer phrase"];
+var test2 = ["a", "abcdef", "abd", "adkjandjwadwj"];
+console.log(longest_item(test))
+console.log(longest_item(test2))
