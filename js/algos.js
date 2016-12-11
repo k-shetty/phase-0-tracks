@@ -45,7 +45,7 @@ function matching_keys(object1, object2){
 //Input: integer
 //Output: array
 //Write one funtion that creates the random strings based on requirements given.
-//implement string creating method within function to solve the original challenge given.
+//implement string creating function within function to solve the original challenge given.
 
 // function string_generator() {
 // 	var randstr = "";
@@ -95,6 +95,15 @@ function array_gen(int) {
 
 //Release 2
 
-console.log(array_gen(5))
-console.log(array_gen(3))
-console.log(array_gen(7))
+// console.log(array_gen(5))
+// console.log(array_gen(3))
+// console.log(array_gen(7))
+
+//Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+var idx = 0
+while (idx < 10) {
+	var array = array_gen(Math.floor((Math.random() * 10) + 1));
+	console.log(array);
+	console.log(longest_item(array));
+	idx ++
+}
