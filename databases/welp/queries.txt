@@ -1,0 +1,14 @@
+SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+1|4|Very calm and serene, however very expensive!!|4|2|2|Mandy|Kailing|4|Lotus Yoga
+2|1|This guy was not on time, left me STRANDED on the freeway and it was snowing on top of that >:C|2|1|1|Bradford|Pitt|2|Amir's Towing
+3|3|decor was okay music was okay dj was ok environment was okay.|3|3|3|Angela|Jollie|3|The Beagle Nightclub
+4|5|FLowers were so beautiful, my bride was so happy with the chapel, and priest. very beatiful location.|1|4|4|Steven|Wodner|1|Grundy Hollow Wedding Chapel
+
+sqlite> SELECT reviews.stars, reviews.comment, users.first_name, users.last_name, businesses.name FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+4|Very calm and serene, however very expensive!!|Mandy|Kailing|Lotus Yoga
+1|This guy was not on time, left me STRANDED on the freeway and it was snowing on top of that >:C|Bradford|Pitt|Amir's Towing
+3|decor was okay music was okay dj was ok environment was okay.|Angela|Jollie|The Beagle Nightclub
+5|FLowers were so beautiful, my bride was so happy with the chapel, and priest. very beatiful location.|Steven|Wodner|Grundy Hollow Wedding Chapel
+
+sqlite> SELECT reviews.stars, reviews.comment, users.first_name, users.last_name, businesses.name FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.id = 3;
+3|decor was okay music was okay dj was ok environment was okay.|Angela|Jollie|The Beagle Nightclub
