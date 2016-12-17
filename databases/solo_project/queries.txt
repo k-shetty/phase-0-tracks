@@ -1,0 +1,61 @@
+sqlite> SELECT * FROM graphics_cards;
+
+1|GeForce GTX 1080 Gaming X|1708|8|true|2
+2|GeForce GTX 1080 ROG STRIX|1695|8|true|1
+3|GeForce 1070 SC GAMING ACX 3.0|1594|8|true|4
+4|GeForce 1070 XLR8|1607|8|true|6
+5|GeForce GTX 1060 GAMING X|1594|6|true|2
+6|GeForce GTX 980 STRIX|1178|4|true|1
+7|GeForce GTX 770 OC|1059|4|false|6
+8|Radeon R9 270|925|2|false|5
+9|Radeon R9 390|990|4|true|5
+
+
+sqlite> UPDATE graphics_cards SET model = "GeForce GTX 1070" WHERE model = "GeForce 1070 SC GAMING ACX 3.0";
+sqlite> SELECT * FROM graphics_cards;
+
+1|GeForce GTX 1080 Gaming X|1708|8|true|2
+2|GeForce GTX 1080 ROG STRIX|1695|8|true|1
+3|GeForce GTX 1070|1594|8|true|4
+4|GeForce 1070 XLR8|1607|8|true|6
+5|GeForce GTX 1060 GAMING X|1594|6|true|2
+6|GeForce GTX 980 STRIX|1178|4|true|1
+7|GeForce GTX 770 OC|1059|4|false|6
+8|Radeon R9 270|925|2|false|5
+9|Radeon R9 390|990|4|true|5
+
+sqlite> SELECT * FROM graphics_cards, manufacturer WHERE graphics_cards.man_id = manufacturer.id;
+1|GeForce GTX 1080 Gaming X|1708|8|true|2|2|MSI
+2|GeForce GTX 1080 ROG STRIX|1695|8|true|1|1|ASUS
+3|GeForce GTX 1070|1594|8|true|4|4|EVGA
+4|GeForce 1070 XLR8|1607|8|true|6|6|PNY
+5|GeForce GTX 1060 GAMING X|1594|6|true|2|2|MSI
+6|GeForce GTX 980 STRIX|1178|4|true|1|1|ASUS
+7|GeForce GTX 770 OC|1059|4|false|6|6|PNY
+8|Radeon R9 270|925|2|false|5|5|XFX
+9|Radeon R9 390|990|4|true|5|5|XFX
+
+sqlite> SELECT graphics_cards.model, graphics_cards.core_clock, manufacturer.company FROM graphics_cards JOIN manufacturer ON graphics_cards.man_id = manufacturer.id;
+
+GeForce GTX 1080 Gaming X|1708|MSI
+GeForce GTX 1080 ROG STRIX|1695|ASUS
+GeForce GTX 1070|1594|EVGA
+GeForce 1070 XLR8|1607|PNY
+GeForce GTX 1060 GAMING X|1594|MSI
+GeForce GTX 980 STRIX|1178|ASUS
+GeForce GTX 770 OC|1059|PNY
+Radeon R9 270|925|XFX
+Radeon R9 390|990|XFX
+
+sqlite> DELETE FROM graphics_cards WHERE VR_capable = "false";
+sqlite> SELECT * FROM graphics_cards;
+
+1|GeForce GTX 1080 Gaming X|1708|8|true|2
+2|GeForce GTX 1080 ROG STRIX|1695|8|true|1
+3|GeForce GTX 1070|1594|8|true|4
+4|GeForce 1070 XLR8|1607|8|true|6
+5|GeForce GTX 1060 GAMING X|1594|6|true|2
+6|GeForce GTX 980 STRIX|1178|4|true|1
+9|Radeon R9 390|990|4|true|5
+
+
