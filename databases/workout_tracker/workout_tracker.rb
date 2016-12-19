@@ -32,11 +32,13 @@ def display_options
 	puts "Info - See the general layout for the starter strength program."
 	puts "Add - Start adding your lifts, reps, sets, and weight to start tracking your progress."
 	puts "Remove - Remove any incorrectly enetered data."
+	puts "Progress - Lists the current exercises you have enetered/logged."
 	puts "Exit - Quit the program."
 end
 
 def display_info(database)
 	info = database.execute("SELECT * FROM starter_strength")
+	puts "#{info[1]}. #{info[2]} at #{info[3]} sets of #{info[4]} reps at #{info[5]}."
 end
 
 def add_info(database)
@@ -48,7 +50,7 @@ def add_info(database)
 	reps = gets.chomp.to_i
 	puts "What weight did you work with for this lift?"
 	weight = gets.chomp.to_i
-	database.execute("INSERT INTO personal_progress (lift, sets, reps, weight) VALUES ((?, ?, ?, ?)", [lift, sets, reps, weight])
+	database.execute("INSERT INTO personal_progress (lift, sets, reps, weight) VALUES (?, ?, ?, ?)", [lift, sets, reps, weight])
 	puts "You have added #{lift} for #{sets} sets for #{reps} reps at #{weight} lbs."
 end
 
@@ -59,3 +61,32 @@ def remove_info(database)
 	database.execute(delete)
 end
 
+def display_progress(database)
+	progress = database.execute("SELECT * FROM personal_progress")
+	progress.each do |lift|
+		puts "#{lift['id']} | #{lift['lift']} at #{lift['sets']} sets of #{lift['reps']} reps at #{lift['weight']} lbs.}"
+	end
+end
+
+puts "Welcome to the Workout Tracker"
+display_options
+puts "Select an option"
+
+input = gets.chomp.downcase
+	until input == "exit"
+		if input == "info"
+			display_info(workout_tracker)
+		elsif input == "add"
+			add_info(workout_tracker)
+		elsif input == "remove"
+			remove_info(workout_tracker)
+		elsif input == "progress"
+			display_progress(workout_tracker)
+		else
+			puts "Valid input not entered. Try again."
+		end
+
+	puts "What would you like to do?"
+	input = gets.chomp
+
+	end
