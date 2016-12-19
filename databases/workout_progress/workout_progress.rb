@@ -70,7 +70,6 @@ def recommend_workout(input,db)
 			i += 1
 		end
 	else
-		puts "Invalid input entered."
 	end
 end
 
@@ -103,8 +102,38 @@ def remove_exercise(db)
 	db.execute("DELETE FROM workout_progress WHERE workout_progress.id=#{entry}")
 end
 
-add_exercise(db)
-add_exercise(db)
-display_log(db)
-remove_exercise(db)
-display_log(db)
+
+#Driver Code
+# add_exercise(db)
+# add_exercise(db)
+# display_log(db)
+# remove_exercise(db)
+# display_log(db)
+
+puts "Welcome to this simple weight training program!"
+puts "Would you like to see some recommended exercises? Select from chest, triceps, back, biceps, legs or shoulders. Enter no if you're not interested."
+inp = ""
+until inp == "no"
+	inp = gets.chomp
+	recommend_workout(inp,db)
+end
+
+puts "You can also store the exercises you complete. You can add exercises, remove exercises or display your current log of completed exercises. Enter add, remove, or display. Enter done when you are finished."
+inp2 = gets.chomp.downcase
+
+until inp2 == "done"
+	if inp2 == "add"
+		add_exercise(db)
+	elsif inp2 == "remove"
+		remove_exercise(db)
+	elsif inp2 = "display"
+		display_log(db)
+	else
+		puts "Invalid Input."
+	end
+
+	puts "Enter add, remove, or display. Enter done when you are finished."
+	inp2 = gets.chomp.downcase
+end
+
+		
