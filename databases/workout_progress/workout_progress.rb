@@ -8,7 +8,7 @@ recommended_exercises_tb = <<-SQL
 	exercise VARCHAR(255),
 	sets INT,
 	reps INT,
-	weight INT
+	weight VARCHAR(255)
 	)
 	SQL
 
