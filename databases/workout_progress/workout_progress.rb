@@ -78,7 +78,7 @@ end
 
 def add_exercise(db)
 	puts "What exercise would you like to add?"
-	exercise = gets.chomp
+	exercise = gets.chomp.capitalize
 	puts "How many sets were completed"
 	sets = gets.chomp.to_i
 	puts "How many reps were in each set"
@@ -89,6 +89,16 @@ def add_exercise(db)
 	puts "You did the #{exercise} for #{sets} sets at #{reps} reps at a weight of #{weight} pounds."
 end
 
-# add_exercise(db)
+def display_log(db)
+	log = db.execute("SELECT * FROM workout_progress")
+	i = 0
+	while i < log.length
+		p "ID : #{log[i]['id']} Exercise : #{log[i]['exercise']}, Sets : #{log[i]['sets']}, Reps : #{log[i]['reps']}, Weight : #{log[i]['weight'] pounds}"
+		i +=1
+	end
+end
+
+
+
 
 
