@@ -4,7 +4,7 @@ db = SQLite3::Database.new("workout_log.db")
 
 recommended_exercises_tb = <<-SQL
 	CREATE TABLE IF NOT EXISTS recommended_exercises (
-	id INTEGER PRIMARY KEY,
+	body_part VARCHAR(255),
 	exercise VARCHAR(255),
 	sets INT,
 	reps INT,
