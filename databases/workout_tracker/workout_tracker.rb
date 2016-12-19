@@ -9,7 +9,7 @@ five_by_five = <<-SQL
 		lift VARCHAR(255),
 		sets INT,
 		reps INT,
-		weight INT
+		weight VARCHAR(255)
 	)
 	SQL
 
@@ -38,3 +38,24 @@ end
 def display_info(database)
 	info = database.execute("SELECT * FROM starter_strength")
 end
+
+def add_info(database)
+	puts "What lift would you like to add?"
+	lift = gets.chomp
+	puts "How many sets were completed"
+	sets = gets.chomp.to_i
+	puts "How many reps were in each set"
+	reps = gets.chomp.to_i
+	puts "What weight did you work with for this lift?"
+	weight = gets.chomp.to_i
+	database.execute("INSERT INTO personal_progress (lift, sets, reps, weight) VALUES ((?, ?, ?, ?)", [lift, sets, reps, weight])
+	puts "You have added #{lift} for #{sets} sets for #{reps} reps at #{weight} lbs."
+end
+
+def remove_info(database)
+	puts "What is the entry you would like to remove. Enter the numerical id before the lift."
+	entry = gets.chomp.to_i
+	delete = "DELETE from personal_progress WHERE id=#{entry}"
+	database.execute(delete)
+end
+
