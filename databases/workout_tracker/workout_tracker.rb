@@ -27,3 +27,14 @@ five_by_five_personal = <<-SQL
 
 workout_tracker.execute(five_by_five_personal)
 
+def display_options
+	puts "Here's what you can do"
+	puts "Info - See the general layout for the starter strength program."
+	puts "Add - Start adding your lifts, reps, sets, and weight to start tracking your progress."
+	puts "Remove - Remove any incorrectly enetered data."
+	puts "Exit - Quit the program."
+end
+
+def display_info(database)
+	info = database.execute("SELECT * FROM starter_strength")
+end
