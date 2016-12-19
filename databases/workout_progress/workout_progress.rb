@@ -74,8 +74,6 @@ def recommend_workout(input,db)
 	end
 end
 
-# recommend_workout("triceps",db)
-
 def add_exercise(db)
 	puts "What exercise would you like to add?"
 	exercise = gets.chomp.capitalize
@@ -93,12 +91,20 @@ def display_log(db)
 	log = db.execute("SELECT * FROM workout_progress")
 	i = 0
 	while i < log.length
-		p "ID : #{log[i]['id']} Exercise : #{log[i]['exercise']}, Sets : #{log[i]['sets']}, Reps : #{log[i]['reps']}, Weight : #{log[i]['weight'] pounds}"
+		p "ID : #{log[i]['id']} Exercise : #{log[i]['exercise']}, Sets : #{log[i]['sets']}, Reps : #{log[i]['reps']}, Weight : #{log[i]['weight']} pounds."
 		i +=1
 	end
 end
 
 
+def remove_exercise(db)
+	puts "What entry would you like to remove? Refer to the ID of the entry for input."
+	entry = gets.chomp.to_i
+	db.execute("DELETE FROM workout_progress WHERE workout_progress.id=#{entry}")
+end
 
-
-
+add_exercise(db)
+add_exercise(db)
+display_log(db)
+remove_exercise(db)
+display_log(db)
