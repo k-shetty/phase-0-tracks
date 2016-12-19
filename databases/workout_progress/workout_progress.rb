@@ -62,13 +62,14 @@ def recommend_workout(input,db)
 			p "Exercise : #{triceps[i]['exercise']}, Sets : #{triceps[i]['sets']}, Reps : #{triceps[i]['reps']}, Weight : #{triceps[i]['weight']}"
 			i += 1
 		end
-	else input == "shoulders"
+	elsif input == "shoulders"
 		shoulders = db.execute("SELECT recommended_exercises.exercise, recommended_exercises.sets, recommended_exercises.reps, recommended_exercises.weight FROM recommended_exercises WHERE recommended_exercises.body_part='shoulders'")
 		i = 0
 		while i < shoulders.length
 			p "Exercise : #{shoulders[i]['exercise']}, Sets : #{shoulders[i]['sets']}, Reps : #{shoulders[i]['reps']}, Weight : #{shoulders[i]['weight']}"
 			i += 1
 		end
+	else
 	end
 end
 
@@ -117,3 +118,22 @@ until inp == "no"
 	recommend_workout(inp,db)
 end
 
+puts "You can also store the exercises you complete. You can add exercises, remove exercises or display your current log of completed exercises. Enter add, remove, or display. Enter done when you are finished."
+inp2 = gets.chomp.downcase
+
+until inp2 == "done"
+	if inp2 == "add"
+		add_exercise(db)
+	elsif inp2 == "remove"
+		remove_exercise(db)
+	elsif inp2 = "display"
+		display_log(db)
+	else
+		puts "Invalid Input."
+	end
+
+	puts "Enter add, remove, or display. Enter done when you are finished."
+	inp2 = gets.chomp.downcase
+end
+
+		
