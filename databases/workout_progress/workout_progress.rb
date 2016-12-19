@@ -76,3 +76,19 @@ end
 
 # recommend_workout("triceps",db)
 
+def add_exercise(db)
+	puts "What exercise would you like to add?"
+	exercise = gets.chomp
+	puts "How many sets were completed"
+	sets = gets.chomp.to_i
+	puts "How many reps were in each set"
+	reps = gets.chomp.to_i
+	puts "What weight did you work with for this exercise?"
+	weight = gets.chomp.to_i
+	db.execute("INSERT INTO workout_progress (exercise, sets, reps, weight) VALUES (?, ?, ?, ?)", [exercise, sets, reps, weight])
+	puts "You did the #{exercise} for #{sets} sets at #{reps} reps at a weight of #{weight} pounds."
+end
+
+# add_exercise(db)
+
+
