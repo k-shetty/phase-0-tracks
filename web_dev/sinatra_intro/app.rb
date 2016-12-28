@@ -61,3 +61,10 @@ get '/great_job' do
 	end
 end
 
+get '/:number_1/plus/:number_2' do
+	num1 = params[:number_1]
+	num2 = params[:number_2]
+	result = num1.to_i + num2.to_i
+	"#{num1} plus #{num2} is equal to #{result}."
+end
+
