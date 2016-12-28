@@ -1,0 +1,17 @@
+h1 { 
+	font-size: xx-large;
+	text-align: center;
+	border: 10px solid black;
+}
+
+form {
+    display: inline-block;
+}
+
+#button {
+	height:20px;
+	width:100px;
+	background-color: #d1e0e0;
+	border: 3px solid black;
+	text-align: center;
+}
