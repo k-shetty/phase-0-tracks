@@ -51,3 +51,13 @@ end
 get '/contact' do
 	"Address: 123 Fake Street Springfield, Illinois 12345"
 end
+
+get '/great_job' do
+	name = params[:name]
+	if name
+		"Good job, #{name}!"
+	else
+		"Good job!"
+	end
+end
+
