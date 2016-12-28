@@ -68,3 +68,11 @@ get '/:number_1/plus/:number_2' do
 	"#{num1} plus #{num2} is equal to #{result}."
 end
 
+# Release 1
+
+#1. Sinatra is not the only web application designed using Ruby. Others web frameworks include Ruby on Rails,
+# Cuba, Pakyow and Volt.
+
+# 2. Other databases can be used in Sinatra, such as Mongo, PostgreSQL, and ActiveRecord.
+
+# 3. A "web stack" refers to all the technologies needed to create a working website. This includes the operating system, programming language, database, and server.
