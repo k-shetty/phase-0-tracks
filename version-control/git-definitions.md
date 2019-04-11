@@ -16,4 +16,4 @@ A commit in git is essentially creating a save point or checkpoint. A good commi
 
 * What is a merge conflict?
 
-A merge conflict is an error that one receives when merging two branches using git does not work properly. There seems to be different types of merge conflicts based off of a cursory search on the subject. I actually ran into an edit collision when I was working on the assignemnt for branching in git, which is how I found out there were multiple causes for merge conflicts.
+A merge conflict is an error that one receives when merging two branches using git does not work properly. There seems to be different types of merge conflicts based off of a cursory search on the subject. I actually ran into an edit collision when I was working on the assignment for branching in git, which is how I found out there were multiple causes for merge conflicts. 
